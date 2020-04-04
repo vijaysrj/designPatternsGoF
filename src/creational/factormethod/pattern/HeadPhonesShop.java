@@ -1,19 +1,17 @@
 package creational.factormethod.pattern;
 
-public abstract class HeadPhonesShop {
+public interface HeadPhonesShop {
 
-	abstract HeadPhones createHeadPhone();
+	HeadPhones createHeadPhone();
 
-	void sellHeadPhone() {
+	default void sellHeadPhone() {
 
 		HeadPhones headPhone = createHeadPhone();
 
-		
-		System.out.println("Rate of HeadPhone"+headPhone.getRate());
-		
-		System.out.println("Packing and Delivering..");
-		
-	}
+		System.out.println("Rate of HeadPhone" + headPhone.getRate());
 
+		System.out.println("Packing and Delivering..");
+
+	}
 
 }

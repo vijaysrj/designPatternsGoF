@@ -1,9 +1,9 @@
 package creational.factormethod.pattern;
 
-public class BossHeadPhonesShop extends HeadPhonesShop{
+public class BossHeadPhonesShop implements HeadPhonesShop{
 
 	@Override
-	HeadPhones createHeadPhone() {
+	public HeadPhones createHeadPhone() {
 		
 		System.out.println("Creating Boss Head Phones");
 		return new BossHeadPhones();
