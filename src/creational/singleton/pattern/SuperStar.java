@@ -5,6 +5,7 @@ public class SuperStar {
 	private static volatile SuperStar superStar = null;
 	
 	
+	
 	private SuperStar() {
 		
 	
