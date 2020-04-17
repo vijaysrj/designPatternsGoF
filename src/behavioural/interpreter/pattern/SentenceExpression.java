@@ -4,28 +4,28 @@ import java.util.StringTokenizer;
 
 public class SentenceExpression implements Expression {
 
-	Expression delete;
+	Expression deleteExp;
 
-	Expression from;
+	Expression fromExp;
 
-	Expression table;
+	Expression tableExp;
 
-	Expression where;
+	Expression whereExp;
 
-	Expression condtions;
+	Expression condtionsExp;
 
 	public SentenceExpression(Expression deleteKeyword, Expression fromKeyword, Expression tableName,
 			Expression whereKeyword, Expression conditions) {
 
-		this.delete = deleteKeyword;
+		this.deleteExp = deleteKeyword;
 
-		this.from = fromKeyword;
+		this.fromExp = fromKeyword;
 
-		this.table = tableName;
+		this.tableExp = tableName;
 
-		this.where = whereKeyword;
+		this.whereExp = whereKeyword;
 
-		this.condtions = conditions;
+		this.condtionsExp = conditions;
 
 	}
 
@@ -46,8 +46,9 @@ public class SentenceExpression implements Expression {
 
 			String conditions = sentence.substring(sentence.indexOf(where) + where.length()).trim();
 
-			boolean valid = this.delete.interpret(delete) && this.from.interpret(from) && this.table.interpret(table)
-					&& this.where.interpret(where) && this.condtions.interpret(conditions);
+			boolean valid = this.deleteExp.interpret(delete) && this.fromExp.interpret(from)
+					&& this.tableExp.interpret(table) && this.whereExp.interpret(where)
+					&& this.condtionsExp.interpret(conditions);
 
 			return valid;
 
